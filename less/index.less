@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -53,7 +53,244 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+/* Page Variables */
+/* Misc */
+/* Page layout */
+/* Skills */
+/* Experience & Education */
+html {
+	height: 100%;
 }
-
+body {
+	height: 100%;
+	font-size: 1em;
+	margin: 0 auto;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+	text-decoration-skip: ink;
+	hyphens: auto;
+}
+header.nav-head {
+	.navigation {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
+p {
+	&:-moz-only-whitespace {
+		display: none;
+	}
+	margin-top: 0;
+	margin-bottom: 0;
+}
+li {
+	&:-moz-only-whitespace {
+		display: none;
+	}
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	+ {
+		li {
+			margin-top: 0.4em;
+		}
+	}
+	.fa {
+		margin-right: 0.3em;
+	}
+	.fab {
+		margin-right: 0.3em;
+	}
+}
+div {
+	&:-moz-only-whitespace {
+		display: none;
+	}
+}
+section {
+	&:-moz-only-whitespace {
+		display: none;
+	}
+}
+&:root {
+	--main-width: 74%;
+	--header-height: 1.2in;
+	--sidebar-width: calc(100% - var(--main-width));
+}
+#save {
+	>section {
+		&:first-of-type {
+			display: flex;
+			flex-direction: row;
+			>aside {
+				flex-basis: var(--sidebar-width);
+				padding: 0.1618in 0 0.1618in 0.1618in;
+				display: flex;
+				flex-direction: column;
+				>section {
+					+ {
+						section {
+							margin-top: 2em;
+						}
+					}
+					&:last-child {
+						margin-top: auto;
+					}
+				}
+			}
+			>section {
+				flex-basis: var(--main-width);
+				display: flex;
+				flex-direction: column;
+				>header {
+					flex-basis: var(--header-height);
+					flex-grow: 0;
+					padding: 0.1618in;
+				}
+				>section {
+					flex-grow: 1;
+					padding: 0.1618in;
+					display: flex;
+					flex-direction: column;
+					>section {
+						+ {
+							section {
+								margin-top: 2em;
+							}
+						}
+						&:last-child {
+							margin-top: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+img {
+	max-width: 100%;
+}
+abbr[title] {
+	text-decoration: none;
+	border: none;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+.fa {
+	text-align: center;
+	min-width: 1em;
+}
+.fab {
+	text-align: center;
+	min-width: 1em;
+}
+.references {
+	address {
+		font-style: normal;
+		font-weight: 300;
+		&:first-line {
+			font-weight: 400;
+		}
+		+ {
+			address {
+				padding-top: 0.5em;
+			}
+			p {
+				padding-top: 0.5em;
+			}
+		}
+	}
+}
+.skills {
+	>ul {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		>li {
+			display: block;
+			float: left;
+			margin: 6px 6px 0 0;
+			>span {
+				background-color: #f5f5f5;
+				border: 1px solid rgba(45, 45, 45, 0.1618);
+				border-radius: 3px;
+				color: #333;
+				padding: 4px 8px;
+				display: inline-block;
+			}
+		}
+	}
+}
+.education {
+	ol {
+		margin: 0;
+		padding: 0;
+		>li {
+			font-weight: 300;
+			div {
+				display: flex;
+				flex-direction: row;
+				>* {
+					&:last-child {
+						margin-left: auto;
+					}
+				}
+			}
+			p {
+				font-weight: 400;
+			}
+		}
+	}
+}
+.experience {
+	ol {
+		margin: 0;
+		padding: 0;
+		flex-wrap: wrap;
+		display: flex;
+		flex-direction: row;
+		>li {
+			margin: 0;
+			padding: 0;
+			flex-basis: 100%;
+			font-weight: 300;
+			+ {
+				li {
+					margin-top: 1em;
+				}
+			}
+			header {
+				display: flex;
+				flex-direction: row;
+				p {
+					font-weight: 400;
+					font-size: 110%;
+				}
+				>* {
+					&:last-child {
+						margin-left: auto;
+					}
+				}
+			}
+			>span {
+				font-weight: 400;
+			}
+			ul {
+				padding-top: 0.5em;
+				li {
+					list-style-type: circle;
+					margin-left: 1.618em;
+				}
+			}
+		}
+	}
+}
